@@ -1,10 +1,10 @@
 # adapted from https://github.com/William-Yeh/docker-ansible/blob/master/alpine3/Dockerfile
 
-FROM alpine:3.8
+FROM alpine:3.10
 
 RUN apk --update add sudo && \
   apk --update add python py-pip openssl ca-certificates && \
-  apk --update add --virtual build-dependencies python-dev libffi-dev openssl-dev build-base && \
+  apk --update add --virtual build-dependencies libffi-dev openssl-dev build-base && \
   pip install --upgrade pip cffi && \
   pip install ansible terraform && \
   pip install --upgrade pycrypto pywinrm && \
