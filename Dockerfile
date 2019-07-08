@@ -3,12 +3,12 @@
 FROM alpine:3.10
 
 RUN apk --update add sudo && \
-  apk --update add python py-pip openssl ca-certificates && \
-  apk --update add --virtual build-dependencies libffi-dev openssl-dev build-base && \
-  pip install --upgrade pip cffi && \
-  pip install ansible terraform && \
-  pip install --upgrade pycrypto pywinrm && \
-  apk --update add sshpass openssh-client rsync && \
+  apk --update add python3 openssl ca-certificates terraform && \
+  apk --update add --virtual build-dependencies python3-dev libffi-dev openssl-dev build-base && \
+  python3 -m ensurepip && \
+  pip3 install --upgrade pip cffi && \
+  pip3 install ansible && \
+  pip3 install --upgrade pycrypto pywinrm && \
   apk del build-dependencies && \
   rm -rf /var/cache/apk/* && \
   mkdir -p /etc/ansible && \
