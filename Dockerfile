@@ -3,7 +3,7 @@
 FROM alpine:3.10
 
 RUN apk --update add sudo && \
-  apk --update add python3 openssl ca-certificates terraform && \
+  apk --update add python3 openssl ca-certificates terraform git && \
   apk --update add --virtual build-dependencies python3-dev libffi-dev openssl-dev build-base && \
   python3 -m ensurepip && \
   pip3 install --no-cache --upgrade pip setuptools wheel cffi && \
