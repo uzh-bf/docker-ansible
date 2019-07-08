@@ -7,7 +7,7 @@ RUN apk --update add sudo && \
   apk --update add --virtual build-dependencies && \
   python-dev libffi-dev openssl-dev build-base  && \
   pip install --upgrade pip cffi && \
-  pip install ansible && \
+  pip install ansible terraform && \
   pip install --upgrade pycrypto pywinrm && \
   apk --update add sshpass openssh-client rsync && \
   apk del build-dependencies && \
