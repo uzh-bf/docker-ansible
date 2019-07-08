@@ -6,9 +6,9 @@ RUN apk --update add sudo && \
   apk --update add python3 openssl ca-certificates terraform && \
   apk --update add --virtual build-dependencies python3-dev libffi-dev openssl-dev build-base && \
   python3 -m ensurepip && \
-  pip3 install --upgrade pip cffi && \
-  pip3 install ansible && \
-  pip3 install --upgrade pycrypto pywinrm && \
+  pip3 install --no-cache --upgrade pip setuptools wheel cffi && \
+  pip3 install --no-cache ansible && \
+  pip3 install --no-cache --upgrade pycrypto pywinrm && \
   apk del build-dependencies && \
   rm -rf /var/cache/apk/* && \
   mkdir -p /etc/ansible && \
