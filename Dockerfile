@@ -1,6 +1,6 @@
 # adapted from https://github.com/William-Yeh/docker-ansible/blob/master/alpine3/Dockerfile
 
-FROM alpine:3.10
+FROM alpine:3.11.3
 
 RUN apk --update add sudo && \
   apk --update add python3 openssl ca-certificates terraform git && \
