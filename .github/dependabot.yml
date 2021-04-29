@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "06:00"
+  open-pull-requests-limit: 99
+  reviewers:
+  - rschlaefli
+  ignore:
+  - dependency-name: alpine
+    versions:
+    - 3.12.3
+    - 3.13.1
